@@ -1,6 +1,6 @@
 const STATS = [
   { value: "+10 mil", label: "Entregas realizadas" },
-  { value: "+8 anos", label: "De experiência na estrada" },
+  { value: "+30 anos", label: "De experiência na estrada" },
   { value: "100%", label: "Cargas entregues sem avarias" },
   { value: "24h", label: "Resposta para parceiros fixos" },
 ];

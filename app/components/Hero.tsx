@@ -206,7 +206,7 @@ export default function Hero() {
             {/* Floating badge */}
             <div className="absolute -right-4 -top-6 hidden sm:flex flex-col items-center justify-center rounded-2xl border border-brand-100 bg-white px-4 py-3 shadow-card animate-float-slow">
               <div className="font-display text-2xl font-bold text-brand-700 leading-none">
-                +8 anos
+                +30 anos
               </div>
               <div className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">
                 de estrada

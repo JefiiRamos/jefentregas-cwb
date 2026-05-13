@@ -18,7 +18,7 @@ const PARTNERS = [
   {
     name: "Cacau Brasil",
     description:
-      "Distribuição estratégica de cosméticos, sempre alinhada ao calendário comercial da marca.",
+      "Distribuição estratégica de chocolates, sempre alinhada ao calendário comercial da marca.",
     Icon: Sparkle,
     tag: "Cosméticos",
   },

@@ -17,7 +17,7 @@ const STEPS = [
     n: "03",
     Icon: Truck,
     title: "Coleta e transporte",
-    desc: "Coletamos no horário combinado e mantemos você informado durante o trajeto.",
+    desc: "Coletamos no horário combinado.",
   },
   {
     n: "04",

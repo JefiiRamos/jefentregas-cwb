@@ -19,8 +19,8 @@ const VEHICLES = [
       "Ideais para cargas maiores, volumes frágeis, joias, cosméticos e pequenas viagens entre cidades.",
     features: [
       "Espaço para volumes maiores",
-      "Transporte com climatização",
-      "Indicado para cargas delicadas",
+      "Transporte com segurança",
+      "Indicado para cargas delicadas e seguras",
       "Pequenas viagens e RMC",
     ],
     badge: "Mais procurado",
