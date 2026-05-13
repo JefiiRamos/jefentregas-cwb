@@ -8,8 +8,8 @@ export const BRANDING = {
 export const SITE = {
   name: "Jef Entregas CWB",
   tagline: "Entregas profissionais em Curitiba, RMC e litoral",
-  whatsappNumber: "5541999999999",
-  whatsappDisplay: "(41) 99999-9999",
+  whatsappNumber: "554196979073",
+  whatsappDisplay: "+55 (41) 9697-9073",
   email: "contato@jefentregascwb.com.br",
   instagram: "@jefentregascwb",
   address: "Curitiba — Paraná",

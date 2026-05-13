@@ -1,4 +1,4 @@
-import { Instagram, Mail, MapPin, Phone, Whatsapp } from "./Icons";
+import { Instagram, Mail, MapPin, Whatsapp } from "./Icons";
 import { LogoWordmark } from "./Logo";
 import { SITE, WHATSAPP_LINK } from "./site-data";
 
@@ -62,8 +62,13 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-2.5">
-                <Phone className="mt-0.5 h-4 w-4 text-brand-300" />
-                <a href={`tel:+${SITE.whatsappNumber}`} className="hover:text-white">
+                <Whatsapp className="mt-0.5 h-4 w-4 text-brand-300" />
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
                   {SITE.whatsappDisplay}
                 </a>
               </li>
