@@ -31,7 +31,7 @@ export default function Header() {
         >
           <LogoFull
             priority
-            className="h-8 w-auto shrink-0 rounded-lg shadow-sm ring-1 ring-black/5 transition-transform group-hover:scale-[1.02] sm:h-9"
+            className="h-8 w-auto shrink-0 rounded-lg shadow-sm transition-transform group-hover:scale-[1.02] sm:h-9"
           />
           <div className="hidden min-[380px]:flex flex-col leading-tight">
             <span className="font-display font-bold text-brand-900 tracking-tight text-sm sm:text-base">

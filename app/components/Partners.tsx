@@ -1,19 +1,37 @@
-import { Diamond, Heart, Sparkle } from "./Icons";
+import Image from "next/image";
+import type { ComponentType, SVGProps } from "react";
+import { Heart, Sparkle } from "./Icons";
 
-const PARTNERS = [
+type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+type Partner =
+  | {
+      name: string;
+      description: string;
+      tag: string;
+      logo: string;
+    }
+  | {
+      name: string;
+      description: string;
+      tag: string;
+      Icon: IconComponent;
+    };
+
+const PARTNERS: Partner[] = [
+  {
+    name: "Camile Pilato",
+    description:
+      "Transporte especializado em joias e semi-joias, com discrição, sigilo e cuidado redobrado.",
+    tag: "Joias & semi-joias",
+    logo: "/camilePilatoLogo.png",
+  },
   {
     name: "Laboran",
     description:
       "Apoio logístico recorrente, mantendo cronogramas com pontualidade e zero perdas.",
     Icon: Heart,
     tag: "Parceiro fixo",
-  },
-  {
-    name: "Camile Pilato",
-    description:
-      "Transporte especializado em joias e semi-joias, com discrição, sigilo e cuidado redobrado.",
-    Icon: Diamond,
-    tag: "Joias & semi-joias",
   },
   {
     name: "Cacau Brasil",
@@ -23,6 +41,29 @@ const PARTNERS = [
     tag: "Cosméticos",
   },
 ];
+
+function PartnerMedia({ partner }: { partner: Partner }) {
+  if ("logo" in partner) {
+    return (
+      <Image
+        src={partner.logo}
+        alt={`Logo ${partner.name}`}
+        width={48}
+        height={48}
+        className="h-12 w-12 shrink-0 rounded-2xl border border-[#b88480]/30 object-contain shadow-soft transition-transform duration-300 ease-out group-hover:scale-105"
+        sizes="48px"
+        priority
+      />
+    );
+  }
+
+  const Icon = partner.Icon;
+  return (
+    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-white shadow-soft">
+      <Icon className="h-6 w-6" />
+    </div>
+  );
+}
 
 export default function Partners() {
   return (
@@ -51,9 +92,7 @@ export default function Partners() {
             >
               <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150" />
               <div className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-white shadow-soft">
-                  <p.Icon className="h-6 w-6" />
-                </div>
+                <PartnerMedia partner={p} />
                 <div className="mt-5 flex items-baseline justify-between gap-3">
                   <h3 className="font-display text-2xl font-bold text-brand-950 tracking-tight">
                     {p.name}
