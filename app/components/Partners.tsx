@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
 type Partner = {
   name: string;
   description: string;
@@ -49,9 +53,50 @@ function PartnerMedia({ partner }: { partner: Partner }) {
 }
 
 export default function Partners() {
+  const [activePartner, setActivePartner] = useState<Partner | null>(null);
+
   return (
-    <section id="parceiros" className="section relative">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section
+      id="parceiros"
+      className="section relative isolate overflow-hidden"
+      onMouseLeave={() => setActivePartner(null)}
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-500"
+      >
+        <div
+          className={`absolute inset-0 bg-gradient-to-br from-white via-brand-50/45 to-white transition-opacity duration-500 ${
+            activePartner ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        {activePartner ? (
+          <>
+            <Image
+              key={`${activePartner.name}-glow`}
+              src={activePartner.logo}
+              alt=""
+              width={760}
+              height={760}
+              className="absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.16] blur-3xl saturate-150 transition-all duration-700 md:h-[44rem] md:w-[44rem] md:opacity-[0.14]"
+              sizes="(min-width: 768px) 42rem, 28rem"
+              priority
+            />
+            <Image
+              key={`${activePartner.name}-mark`}
+              src={activePartner.logo}
+              alt=""
+              width={520}
+              height={520}
+              className="absolute right-[-4rem] top-24 hidden h-[24rem] w-[24rem] rotate-6 object-contain opacity-10 blur-xl saturate-125 transition-all duration-700 md:block lg:right-[8%] lg:top-20 lg:h-[32rem] lg:w-[32rem]"
+              sizes="32rem"
+              priority
+            />
+          </>
+        ) : null}
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-800">
             Clientes e operações atendidas
@@ -72,9 +117,15 @@ export default function Partners() {
           {PARTNERS.map((p) => (
             <article
               key={p.name}
-              className="group relative overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-brand-200 hover:shadow-card"
+              tabIndex={0}
+              onClick={() => setActivePartner(p)}
+              onFocus={() => setActivePartner(p)}
+              onBlur={() => setActivePartner(null)}
+              onMouseEnter={() => setActivePartner(p)}
+              onMouseMove={() => setActivePartner(p)}
+              className="group relative overflow-hidden rounded-3xl border border-border bg-white/90 p-7 shadow-soft outline-none backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-brand-200 hover:bg-white/95 hover:shadow-card focus-visible:-translate-y-1 focus-visible:border-brand-300 focus-visible:ring-4 focus-visible:ring-brand-100"
             >
-              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150" />
+              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150 group-focus-visible:scale-150" />
               <div className="relative flex h-full flex-col">
                 <div className="flex items-start justify-between gap-4">
                   <PartnerMedia partner={p} />
