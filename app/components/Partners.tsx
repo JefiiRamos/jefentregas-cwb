@@ -1,67 +1,50 @@
 import Image from "next/image";
-import type { ComponentType, SVGProps } from "react";
-import { Heart, Sparkle } from "./Icons";
-
-type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
-
-type Partner =
-  | {
-      name: string;
-      description: string;
-      tag: string;
-      logo: string;
-    }
-  | {
-      name: string;
-      description: string;
-      tag: string;
-      Icon: IconComponent;
-    };
+type Partner = {
+  name: string;
+  description: string;
+  tag: string;
+  chips: string[];
+  logo: string;
+};
 
 const PARTNERS: Partner[] = [
   {
     name: "Camile Pilato",
     description:
-      "Transporte especializado em joias e semi-joias, com discrição, sigilo e cuidado redobrado.",
+      "Transporte com discrição, cuidado no manuseio e atenção redobrada para itens de maior valor agregado.",
     tag: "Joias & semi-joias",
+    chips: ["Discrição", "Carga delicada", "Cuidado premium"],
     logo: "/camilePilatoLogo.png",
   },
   {
     name: "Laboran",
     description:
-      "Apoio logístico recorrente, mantendo cronogramas com pontualidade e zero perdas.",
-    Icon: Heart,
-    tag: "Parceiro fixo",
+      "Apoio logístico contínuo para rotinas que precisam de previsibilidade, comunicação clara e cumprimento de cronogramas.",
+    logo: "/laboran-logo.jpg",
+    tag: "Operação recorrente",
+    chips: ["Recorrência", "Pontualidade", "Controle de rota"],
   },
   {
-    name: "Cacau Brasil",
+    name: "Brasil Cacau",
     description:
-      "Distribuição estratégica de chocolates, sempre alinhada ao calendário comercial da marca.",
-    Icon: Sparkle,
-    tag: "Cosméticos",
+      "Apoio em entregas estratégicas para produtos sensíveis, com atenção a prazo, apresentação da carga e períodos de alta demanda.",
+    logo: "/brasilCacauLogo.png",
+    tag: "Chocolates",
+    chips: ["Entrega programada", "Produto sensível", "Alta demanda"],
   },
 ];
 
 function PartnerMedia({ partner }: { partner: Partner }) {
-  if ("logo" in partner) {
-    return (
-      <Image
-        src={partner.logo}
-        alt={`Logo ${partner.name}`}
-        width={48}
-        height={48}
-        className="h-12 w-12 shrink-0 rounded-2xl border border-[#b88480]/30 object-contain shadow-soft transition-transform duration-300 ease-out group-hover:scale-105"
-        sizes="48px"
-        priority
-      />
-    );
-  }
-
-  const Icon = partner.Icon;
   return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-white shadow-soft">
-      <Icon className="h-6 w-6" />
-    </div>
+    <Image
+      src={partner.logo}
+      alt={`Logo ${partner.name}`}
+      width={64}
+      height={64}
+      className="h-16 w-16 shrink-0 rounded-2xl border border-brand-100 bg-white object-contain shadow-soft transition-transform duration-300 ease-out group-hover:scale-105"
+      sizes="64px"
+      priority
+    />
   );
 }
 
@@ -69,18 +52,19 @@ export default function Partners() {
   return (
     <section id="parceiros" className="section relative">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-800">
-            Confiam na Jef Entregas
+            Clientes e operações atendidas
           </span>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-950">
-            Marcas que escolheram um parceiro logístico{" "}
-            <span className="text-gradient-brand">de verdade</span>
+          <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
+            Parceiros que confiam na Jef para entregas{" "}
+            <span className="text-gradient-brand">com responsabilidade</span>
           </h2>
           <p className="mt-4 text-zinc-600 leading-relaxed">
-            Trabalhamos com marcas exigentes que precisam de pontualidade,
-            cuidado com a carga e atendimento humano. Cada entrega carrega o
-            nome do seu negócio — e nós levamos isso a sério.
+            Atendemos empresas que precisam de pontualidade, discrição e
+            cuidado real com cada entrega. De marcas locais a operações
+            recorrentes, nosso compromisso é proteger o nome do cliente em cada
+            rota.
           </p>
         </div>
 
@@ -91,19 +75,37 @@ export default function Partners() {
               className="group relative overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-brand-200 hover:shadow-card"
             >
               <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150" />
-              <div className="relative">
-                <PartnerMedia partner={p} />
-                <div className="mt-5 flex items-baseline justify-between gap-3">
-                  <h3 className="font-display text-2xl font-bold text-brand-950 tracking-tight">
-                    {p.name}
-                  </h3>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-700">
+              <div className="relative flex h-full flex-col">
+                <div className="flex items-start justify-between gap-4">
+                  <PartnerMedia partner={p} />
+                  <span className="mt-2 max-w-36 text-right text-[10px] font-semibold uppercase tracking-wider text-brand-700">
                     {p.tag}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+
+                <div className="mt-5">
+                  <h3 className="font-display text-2xl font-bold tracking-tight text-brand-950">
+                    {p.name}
+                  </h3>
+                  <span className="mt-2 inline-flex text-[11px] font-semibold uppercase tracking-wider text-brand-700">
+                    Como ajudamos
+                  </span>
+                </div>
+
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
                   {p.description}
                 </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.chips.map((chip) => (
+                    <span
+                      key={chip}
+                      className="rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-[11px] font-semibold text-brand-800"
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

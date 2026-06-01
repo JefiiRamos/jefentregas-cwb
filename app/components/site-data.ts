@@ -21,7 +21,7 @@ export const WHATSAPP_LINK = `https://wa.me/${SITE.whatsappNumber}?text=${encode
 
 export const NAV_LINKS = [
   { href: "#servicos", label: "Serviços" },
-  { href: "#parceiros", label: "Parceiros" },
+  { href: "#parceiros", label: "Clientes" },
   { href: "#cobertura", label: "Cobertura" },
   { href: "#diferenciais", label: "Diferenciais" },
   { href: "#contato", label: "Contato" },

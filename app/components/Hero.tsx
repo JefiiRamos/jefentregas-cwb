@@ -207,7 +207,7 @@ export default function Hero() {
                 <div className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">
                   de estrada
                 </div>
-              </div>
+              </div>I
             </div>
           </div>
         ) : (
