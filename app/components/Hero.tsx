@@ -45,11 +45,14 @@ export default function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600 animate-fade-up">
             A <strong className="text-brand-800">Jef Entregas CWB</strong>{" "}
             transporta o que importa em Curitiba, região metropolitana e litoral
-            do Paraná. Carro e moto, cargas delicadas, joias e cosméticos — com
+            do Paraná. Carro e moto, cargas delicadas, joias, chocolates e
+            produtos perecíveis — com
             a profissionalidade que marcas como{" "}
             <span className="font-semibold text-zinc-800">Laboran</span>,{" "}
             <span className="font-semibold text-zinc-800">Camile Pilato</span> e{" "}
-            <span className="font-semibold text-zinc-800">Cacau Brasil</span>{" "}
+            <span className="font-semibold text-zinc-800">
+              Brasil Cacau Shopping Água Verde
+            </span>{" "}
             confiam.
           </p>
 
@@ -216,7 +219,7 @@ export default function Hero() {
             <div className="relative w-full max-w-md px-2 sm:max-w-lg lg:max-w-none lg:px-0">
               <LogoFull
                 priority
-                className="mx-auto h-auto w-full max-w-[min(100%,420px)] rounded-3xl shadow-card animate-fade-up sm:max-w-[480px] lg:mx-0 lg:max-w-full"
+                className="mx-auto h-auto w-full max-w-[min(100%,420px)] rounded-3xl animate-fade-up sm:max-w-[480px] lg:mx-0 lg:max-w-full"
               />
             </div>
           </div>

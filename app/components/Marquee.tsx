@@ -3,9 +3,11 @@ import { LogoPlaneTile } from "./Logo";
 const ITEMS = [
   "Laboran",
   "Camile Pilato",
-  "Cacau Brasil",
+  "Brasil Cacau",
+  "Shopping Água Verde",
   "Joias & semi-joias",
-  "Cosméticos",
+  "Produto perecível",
+  "Chocolates",
   "Pequenas viagens",
   "Curitiba",
   "RMC",

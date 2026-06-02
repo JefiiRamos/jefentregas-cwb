@@ -12,13 +12,13 @@ const ITEMS = [
     quote:
       "A operação flui sem dor de cabeça. Combinamos uma vez, e a Jef Entregas executa sempre no padrão.",
     name: "Equipe Laboran",
-    role: "Parceiro fixo",
+    role: "Operação recorrente",
   },
   {
     quote:
-      "Atendimento humano e responsável. É o tipo de parceiro logístico que toda marca exigente precisa ter.",
-    name: "Time Cacau Brasil",
-    role: "Cosméticos",
+      "Atendimento humano e responsável para uma carga que precisa chegar bem apresentada e no prazo.",
+    name: "Brasil Cacau",
+    role: "Shopping Água Verde · Produto perecível · Chocolates",
   },
 ];
 

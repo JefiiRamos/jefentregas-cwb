@@ -5,6 +5,7 @@ import { useState } from "react";
 
 type Partner = {
   name: string;
+  location?: string;
   description: string;
   tag: string;
   chips: string[];
@@ -30,11 +31,12 @@ const PARTNERS: Partner[] = [
   },
   {
     name: "Brasil Cacau",
+    location: "Shopping Água Verde",
     description:
-      "Apoio em entregas estratégicas para produtos sensíveis, com atenção a prazo, apresentação da carga e períodos de alta demanda.",
+      "Apoio em entregas estratégicas de chocolates e produtos perecíveis, com atenção a prazo, apresentação da carga e períodos de alta demanda.",
     logo: "/brasilCacauLogo.png",
-    tag: "Chocolates",
-    chips: ["Entrega programada", "Produto sensível", "Alta demanda"],
+    tag: "Produto perecível",
+    chips: ["Chocolates", "Entrega programada", "Carga sensível"],
   },
 ];
 
@@ -138,6 +140,11 @@ export default function Partners() {
                   <h3 className="font-display text-2xl font-bold tracking-tight text-brand-950">
                     {p.name}
                   </h3>
+                  {p.location ? (
+                    <div className="mt-1 text-sm font-semibold text-brand-700">
+                      {p.location}
+                    </div>
+                  ) : null}
                   <span className="mt-2 inline-flex text-[11px] font-semibold uppercase tracking-wider text-brand-700">
                     Como ajudamos
                   </span>

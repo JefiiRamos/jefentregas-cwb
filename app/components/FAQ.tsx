@@ -10,7 +10,7 @@ const FAQS = [
   },
   {
     q: "Vocês transportam joias e cargas delicadas?",
-    a: "Sim. Temos experiência específica com joias, semi-joias e cosméticos — atendendo marcas como Camile Pilato e Cacau Brasil. Trabalhamos com discrição, sigilo e protocolos de segurança.",
+    a: "Sim. Temos experiência específica com joias, semi-joias, chocolates e produtos perecíveis — atendendo marcas como Camile Pilato e Brasil Cacau Shopping Água Verde. Trabalhamos com discrição, sigilo e protocolos de segurança.",
   },
   {
     q: "Como funciona o orçamento?",

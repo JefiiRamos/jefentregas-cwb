@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s · Jef Entregas CWB",
   },
   description:
-    "Entregas rápidas, seguras e confiáveis em Curitiba, região metropolitana e litoral do Paraná. Atendimento especializado para joias, semi-joias, cosméticos e cargas delicadas. Parceiro oficial de marcas como Laboran, Camile Pilato e Cacau Brasil.",
+    "Entregas rápidas, seguras e confiáveis em Curitiba, região metropolitana e litoral do Paraná. Atendimento especializado para joias, semi-joias, chocolates, produtos perecíveis e cargas delicadas. Parceiro oficial de marcas como Laboran, Camile Pilato e Brasil Cacau Shopping Água Verde.",
   keywords: [
     "entregas Curitiba",
     "motoboy Curitiba",
@@ -31,7 +31,8 @@ export const metadata: Metadata = {
     "transporte de joias",
     "Laboran",
     "Camile Pilato",
-    "Cacau Brasil",
+    "Brasil Cacau",
+    "Brasil Cacau Shopping Água Verde",
     "região metropolitana de Curitiba",
     "litoral do Paraná",
   ],
